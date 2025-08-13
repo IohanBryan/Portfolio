@@ -1,0 +1,184 @@
+/* Exibir o ícone hamburger no mobile */
+.menu-icon {
+  display: block;
+}
+
+/* Esconder o menu padrão */
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--escuro);
+  position: absolute;
+  top: 58px;
+  right: 0;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  z-index: 200;
+}
+
+/* Mostrar o menu quando checkbox ativo */
+#menu-toggle:checked + .menu-icon + .menu {
+  display: flex;
+}
+
+.menu li {
+  margin: 0.8rem 0;
+  text-align: center;
+}
+
+/* Ajustar links do menu no mobile */
+.menu-link {
+  font-size: 1.3rem;
+}
+
+/* BODY padding menor para mobile */
+body {
+  padding: 1rem 1.2rem;
+}
+
+/* HEADER */
+.cabecalho {
+  margin: 2rem 0 3rem;
+}
+
+.foto-perfil {
+  width: 130px;
+  height: 130px;
+  border-width: 3px;
+  margin-bottom: 0.6rem;
+}
+
+.cabecalho h1 {
+  font-size: 2rem;
+}
+
+.cabecalho-sub-titulo {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Sections max-width menor */
+section, .ppe, .Curriculo, .anexos {
+  max-width: 100%;
+  padding: 1rem 1rem;
+  margin-bottom: 3rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Títulos menores */
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid var(primaria);
+  padding-bottom: 0.3rem;
+}
+
+.caixa h3 {
+  font-size: 1.2rem;
+}
+
+/* Textos dentro das caixas */
+.sobre-caixa p,
+.vida-box p,
+.caixa p,
+.Considerações-box p,
+.Referências-box p {
+  font-size: 1rem;
+}
+
+/* Anexos: empilha verticalmente e centraliza */
+.anexos {
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Cartões anexos ocupam quase toda largura */
+.anexos-card {
+  max-width: 90%;
+  padding: 1rem 1rem;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+/* Imagens responsivas */
+.ppe-img,
+.Curriculo-img {
+  width: 100%;
+  height: auto;
+  box-shadow: none;
+  border-radius: 6px;
+}
+
+/* Footer */
+.footer {
+  padding: 1rem 1rem;
+}
+
+.footer-content p {
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  gap: 1rem;
+}
+
+/* Esferas decorativas escondidas no mobile para não atrapalhar */
+.sphere {
+  display: none;
+}
+/* Alinhar título e textos da Identificação Pessoal */
+#Identificação {
+  padding: 20px;
+}
+
+.sobre-titulo {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: left; /* deixa o título alinhado à esquerda */
+}
+
+.sobre-caixa {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* espaçamento entre os parágrafos */
+  max-width: 600px;
+  margin: 0 auto; /* centraliza o conteúdo da identificação */
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.projeto-vida {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.projeto-vida .caixa {
+  background-color: var(--escuro); /* cor de fundo leve */
+  padding: 15px;
+  margin-bottom: 15px; /* espaçamento entre as caixas */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%; /* ocupa toda a largura disponível */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .projeto-vida {
+    max-width: 90%;
+    padding: 0 10px;
+  }
+}
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+  .sobre-caixa,
+  .projeto-vida {
+    max-width: 90%;
+    padding: 15px;
+  }
+}
