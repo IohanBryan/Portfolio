@@ -1,0 +1,224 @@
+warning: in the working copy of 'Login.html', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --cc Login.html[m
+[1mindex 0237b3f,10c20b3..0000000[m
+[1m--- a/Login.html[m
+[1m+++ b/Login.html[m
+[36m@@@ -1,158 -1,158 +1,157 @@@[m
+[31m -<!DOCTYPE html>[m
+[31m -<html lang="en">[m
+[31m -[m
+[31m -<head>[m
+[31m -    <meta charset="UTF-8">[m
+[31m -    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[31m -    <title>LOGIN</title>[m
+[31m -    <style>[m
+[31m -        * {[m
+[31m -            margin: 0;[m
+[31m -            padding: 0;[m
+[31m -            box-sizing: border-box;[m
+[31m -            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;[m
+[31m -        }[m
+[31m -[m
+[31m -        :root {[m
+[31m -            --primaria: #00f7ff;[m
+[31m -            --primaria-brilho: #00f7ff80;[m
+[31m -            --secundaria: rgba(0, 247, 255, 0.3);[m
+[31m -            --escuro: #0f172a;[m
+[31m -            --maisEscuro: #0f0f1e;[m
+[31m -            --vidro: rgba(255, 255, 255, 0.05);[m
+[31m -            --textoClaro: #e2e8f0;[m
+[31m -        }[m
+[31m -[m
+[31m -        body {[m
+[31m -            background-color: var(--maisEscuro);[m
+[31m -            display: flex;[m
+[31m -            justify-content: center;[m
+[31m -            align-items: center;[m
+[31m -            height: 100vh;[m
+[31m -            overflow: hidden;[m
+[31m -        }[m
+[31m -[m
+[31m -        form {[m
+[31m -            background: var(--vidro);[m
+[31m -            padding: 40px;[m
+[31m -            border-radius: 15px;[m
+[31m -            box-shadow: 0 0 20px var(--primaria-brilho);[m
+[31m -            width: 320px;[m
+[31m -            text-align: center;[m
+[31m -            z-index: 1;[m
+[31m -            position: relative;[m
+[31m -        }[m
+[31m -[m
+[31m -        h3 {[m
+[31m -            color: var(--primaria);[m
+[31m -            margin-bottom: 20px;[m
+[31m -            font-size: 24px;[m
+[31m -        }[m
+[31m -[m
+[31m -        input[type="text"],[m
+[31m -        input[type="password"] {[m
+[31m -            width: 100%;[m
+[31m -            padding: 12px;[m
+[31m -            margin: 10px 0;[m
+[31m -            border: none;[m
+[31m -            border-radius: 8px;[m
+[31m -            background-color: var(--escuro);[m
+[31m -            color: var(--textoClaro);[m
+[31m -            outline: none;[m
+[31m -            box-shadow: 0 0 10px var(--primaria-brilho);[m
+[31m -            transition: 0.3s;[m
+[31m -        }[m
+[31m -[m
+[31m -        input[type="text"]:focus,[m
+[31m -        input[type="password"]:focus {[m
+[31m -            box-shadow: 0 0 15px var(--primaria);[m
+[31m -        }[m
+[31m -[m
+[31m -        input[type="submit"] {[m
+[31m -            width: 100%;[m
+[31m -            padding: 12px;[m
+[31m -            background-color: var(--primaria);[m
+[31m -            color: var(--maisEscuro);[m
+[31m -            border: none;[m
+[31m -            border-radius: 8px;[m
+[31m -            cursor: pointer;[m
+[31m -            font-weight: bold;[m
+[31m -            transition: 0.3s, transform 0.2s;[m
+[31m -        }[m
+[31m -[m
+[31m -        input[type="submit"]:hover {[m
+[31m -            background-color: #0ff;[m
+[31m -            transform: scale(1.05);[m
+[31m -        }[m
+[31m -[m
+[31m -        /* Esferas decorativas */[m
+[31m -        .sphere {[m
+[31m -            position: fixed;[m
+[31m -            width: 180px;[m
+[31m -            height: 180px;[m
+[31m -            border-radius: 50%;[m
+[31m -            z-index: 0;[m
+[31m -            filter: blur(60px);[m
+[31m -            pointer-events: none;[m
+[31m -            animation: float 6s ease-in-out infinite;[m
+[31m -        }[m
+[31m -[m
+[31m -        .sphere-top-left {[m
+[31m -            top: 40px;[m
+[31m -            left: 40px;[m
+[31m -            background: var(--primaria);[m
+[31m -            opacity: 0.8;[m
+[31m -            animation-delay: 0s;[m
+[31m -        }[m
+[31m -[m
+[31m -        .sphere-bottom-right {[m
+[31m -            bottom: 40px;[m
+[31m -            right: 40px;[m
+[31m -            background: var(--secundaria);[m
+[31m -            opacity: 0.9;[m
+[31m -            animation-delay: 3s;[m
+[31m -        }[m
+[31m -[m
+[31m -        /* Animação flutuante */[m
+[31m -        @keyframes float {[m
+[31m -[m
+[31m -            0%,[m
+[31m -            100% {[m
+[31m -                transform: translateY(0px);[m
+[31m -            }[m
+[31m -[m
+[31m -            50% {[m
+[31m -                transform: translateY(-20px);[m
+[31m -            }[m
+[31m -        }[m
+[31m -    </style>[m
+[31m -</head>[m
+[31m -[m
+[31m -<body>[m
+[31m -    <form>[m
+[31m -        <h3>LOGIN</h3>[m
+[31m -        <input type="text" placeholder="LOGIN" id="login" />[m
+[31m -        <input type="password" placeholder="Senha" id="senha" />[m
+[31m -        <input type="submit" value="Entrar" onclick="logar();return false" />[m
+[31m -    </form>[m
+[31m -[m
+[31m -    <!-- Esferas decorativas -->[m
+[31m -    <div class="sphere sphere-top-left"></div>[m
+[31m -    <div class="sphere sphere-bottom-right"></div>[m
+[31m -    <script>[m
+[31m -        function logar() {[m
+[31m -            var login = document.getElementById("login").value;[m
+[31m -            var senha = document.getElementById("senha").value;[m
+[31m -            if (login == "admin" && senha == "admin") {[m
+[31m -                alert("Sucesso");[m
+[31m -                location.href = "index.html";[m
+[31m -            } else {[m
+[31m -                alert("usuario ou senha invalida");[m
+[31m -            }[m
+[31m -        }[m
+[31m -[m
+[31m -[m
+[31m -    </script>[m
+[31m -</body>[m
+[31m -[m
+[31m -</html>[m
+[32m++[m
+[32m +<!DOCTYPE html>[m
+[32m +<html lang="en">[m
+[32m +[m
+[32m +<head>[m
+[32m +    <meta charset="UTF-8">[m
+[32m +    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m +    <title>LOGIN</title>[m
+[32m +    <style>[m
+[32m +        * {[m
+[32m +            margin: 0;[m
+[32m +            padding: 0;[m
+[32m +            box-sizing: border-box;[m
+[32m +            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;[m
+[32m +        }[m
+[32m +[m
+[32m +        :root {[m
+[32m +            --primaria: #00f7ff;[m
+[32m +            --primaria-brilho: #00f7ff80;[m
+[32m +            --secundaria: rgba(0, 247, 255, 0.3);[m
+[32m +            --escuro: #0f172a;[m
+[32m +            --maisEscuro: #0f0f1e;[m
+[32m +            --vidro: rgba(255, 255, 255, 0.05);[m
+[32m +            --textoClaro: #e2e8f0;[m
+[32m +        }[m
+[32m +[m
+[32m +        body {[m
+[32m +            background-color: var(--maisEscuro);[m
+[32m +            display: flex;[m
+[32m +            justify-content: center;[m
+[32m +            align-items: center;[m
+[32m +            height: 100vh;[m
+[32m +            overflow: hidden;[m
+[32m +        }[m
+[32m +[m
+[32m +        form {[m
+[32m +            background: var(--vidro);[m
+[32m +            padding: 40px;[m
+[32m +            border-radius: 15px;[m
+[32m +            box-shadow: 0 0 20px var(--primaria-brilho);[m
+[32m +            width: 320px;[m
+[32m +            text-align: center;[m
+[32m +            z-index: 1;[m
+[32m +            position: relative;[m
+[32m +        }[m
+[32m +[m
+[32m +        h3 {[m
+[32m +            color: var(--primaria);[m
+[32m +            margin-bottom: 20px;[m
+[32m +            font-size: 24px;[m
+[32m +        }[m
+[32m +[m
+[32m +        input[type="text"],[m
+[32m +        input[type="password"] {[m
+[32m +            width: 100%;[m
+[32m +            padding: 12px;[m
+[32m +            margin: 10px 0;[m
+[32m +            border: none;[m
+[32m +            border-radius: 8px;[m
+[
