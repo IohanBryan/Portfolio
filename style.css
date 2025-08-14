@@ -151,14 +151,40 @@ h2 {
 }
 
 .sobre-caixa {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     padding: 2rem;
     max-width: 900px;
     margin: 0 auto;
-    text-align: center;
     border-radius: 16px;
     border: 1px solid var(--vidro);
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap; /* responsivo */
+    text-align: left;
+}
+
+/* Imagem da Identificação Pessoal */
+.identificacao-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 0 15px var(--primaria);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito hover neon */
+.identificacao-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--primaria);
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
 }
 
 .sobre-caixa {
@@ -219,6 +245,7 @@ h2 {
 .vida-paragrafo {
     text-align: center;
     font-size: 1.rem;
+    text-align: justify;
 }
 
 .projeto-vida {
@@ -262,6 +289,7 @@ h2 {
 .caixa p {
     font-size: 1.2rem;
     color: var(--claro);
+    text-align: justify;
 }
 
 .Curriculo {
@@ -318,6 +346,7 @@ h2 {
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.rem;
+    text-align: justify;
 }
 
 .footer {
@@ -354,6 +383,7 @@ h2 {
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.rem;
+    text-align: justify;
 }
 
 .anexos {
