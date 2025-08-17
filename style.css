@@ -38,8 +38,10 @@ body {
 
 .logo {
     font-family: "Orbitron", sans-serif;
-    font-size: 1rem; /* ↓ ajustado de 1.2rem */
-    font-weight: 700; /* ↓ ajustado de 800 */
+    font-size: 1rem;
+    /* ↓ ajustado de 1.2rem */
+    font-weight: 700;
+    /* ↓ ajustado de 800 */
     color: var(--primaria);
     text-shadow: 0 0 10px var(--secundaria);
     padding-left: 2rem;
@@ -161,7 +163,8 @@ h2 {
     border: 1px solid var(--vidro);
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.05);
-    flex-wrap: wrap; /* responsivo */
+    flex-wrap: wrap;
+    /* responsivo */
     text-align: left;
 }
 
@@ -254,7 +257,7 @@ h2 {
     gap: 2rem;
     margin: 80px 0;
     flex-wrap: wrap;
-    
+
 }
 
 .titulo-projeto {
@@ -315,6 +318,7 @@ h2 {
 .Curriculo h2 {
     margin-bottom: 20px;
 }
+
 .Curriculo-img:hover {
     transform: scale(1.05);
     backdrop-filter: blur(20px);
@@ -350,7 +354,7 @@ h2 {
 }
 
 .footer {
-   background-color: var(--maisEscuro);
+    background-color: var(--maisEscuro);
     color: var(--claro);
     padding: 3rem 0;
     text-align: center;
@@ -446,40 +450,42 @@ h2 {
 
 /* Esferas decorativas */
 .sphere {
-  position: fixed;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  z-index: 0; /* atrás do conteúdo */
-  filter: blur(60px);
-  pointer-events: none; /* não interfere com clique */
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: 0;
+    /* atrás do conteúdo */
+    filter: blur(60px);
+    pointer-events: none;
+    /* não interfere com clique */
 }
 
 /* Esferas decorativas */
 .sphere {
-  position: fixed;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  z-index: 0;
-  filter: blur(60px);
-  pointer-events: none;
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(60px);
+    pointer-events: none;
 }
 
 /* Esfera no canto superior esquerdo (mais para o centro) */
 .sphere-top-left {
-  top: 40px;
-  left: 40px;
-  background: var(--primaria);
-  opacity: 0.8;
+    top: 40px;
+    left: 40px;
+    background: var(--primaria);
+    opacity: 0.8;
 }
 
 /* Esfera no canto inferior direito (mais para o centro) */
 .sphere-bottom-right {
-  bottom: 40px;
-  right: 40px;
-  background: var(--secundaria);
-  opacity: 0.7;
+    bottom: 40px;
+    right: 40px;
+    background: var(--secundaria);
+    opacity: 0.7;
 }
 
 
@@ -524,4 +530,74 @@ h2 {
         width: 30px;
         height: 30px;
     }
+}
+
+/* ============================= */
+/* MELHORIA DAS CAIXAS DE TEXTO */
+/* ============================= */
+
+.sobre-caixa,
+.vida-box,
+.caixa,
+.Considerações-box,
+.Referências-box {
+    border-radius: 20px;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(0, 247, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--primaria);
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.2), inset 0 0 10px rgba(0, 247, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito neon ao passar o mouse */
+.sobre-caixa:hover,
+.vida-box:hover,
+.caixa:hover,
+.Considerações-box:hover,
+.Referências-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px var(--primaria), inset 0 0 15px rgba(0, 247, 255, 0.2);
+}
+
+/* Linha animada no topo da caixa */
+.sobre-caixa::before,
+.vida-box::before,
+.caixa::before,
+.Considerações-box::before,
+.Referências-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primaria), transparent);
+    animation: deslizar 4s linear infinite;
+}
+
+@keyframes deslizar {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+/* Texto dentro das caixas */
+.sobre-caixa p,
+.vida-box p,
+.caixa p,
+.Considerações-box p,
+.Referências-box p {
+    color: var(--claro);
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
