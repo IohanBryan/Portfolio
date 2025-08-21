@@ -533,7 +533,7 @@ h2 {
 }
 
 /* ============================= */
-/* CAIXAS DE TEXTO COM BORDA NEON */
+/* MELHORIA DAS CAIXAS DE TEXTO */
 /* ============================= */
 
 .sobre-caixa,
@@ -541,28 +541,27 @@ h2 {
 .caixa,
 .Considerações-box,
 .Referências-box {
-    position: relative;
     border-radius: 20px;
     padding: 2rem;
     background: linear-gradient(145deg, rgba(0, 247, 255, 0.05), rgba(255, 255, 255, 0.02));
-    border: 1px solid rgba(0, 247, 255, 0.3);
-    overflow: hidden;
-    z-index: 0;
+    border: 1px solid var(--primaria);
     box-shadow: 0 0 15px rgba(0, 247, 255, 0.2), inset 0 0 10px rgba(0, 247, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Efeito hover */
+/* Efeito neon ao passar o mouse */
 .sobre-caixa:hover,
 .vida-box:hover,
 .caixa:hover,
 .Considerações-box:hover,
 .Referências-box:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 25px var(--primaria), inset 0 0 20px rgba(0, 247, 255, 0.3);
+    box-shadow: 0 0 25px var(--primaria), inset 0 0 15px rgba(0, 247, 255, 0.2);
 }
 
-/* Linha animada percorrendo toda a borda */
+/* Linha animada no topo da caixa */
 .sobre-caixa::before,
 .vida-box::before,
 .caixa::before,
@@ -570,28 +569,29 @@ h2 {
 .Referências-box::before {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: 20px;
-    padding: 2px; /* espessura da linha neon */
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
     background: linear-gradient(90deg, transparent, var(--primaria), transparent);
-    background-size: 300% 300%;
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: borda-percorrer 6s linear infinite;
-    z-index: 1;
+    animation: deslizar 4s linear infinite;
 }
 
-/* Animação que percorre a borda inteira */
-@keyframes borda-percorrer {
-    0%   { background-position: 0% 0%; }     /* começa na parte de cima */
-    25%  { background-position: 100% 0%; }   /* vai para a direita */
-    50%  { background-position: 100% 100%; } /* vai para baixo */
-    75%  { background-position: 0% 100%; }   /* vai para a esquerda */
-    100% { background-position: 0% 0%; }     /* volta ao topo */
+@keyframes deslizar {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%;
+    }
 }
 
-/* Texto */
+/* Texto dentro das caixas */
 .sobre-caixa p,
 .vida-box p,
 .caixa p,
