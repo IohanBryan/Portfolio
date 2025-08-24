@@ -426,7 +426,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Efeito hover */
+
 .anexos-card::before {
     content: "";
     position: absolute;
@@ -448,20 +448,18 @@ h2 {
     box-shadow: 0px 8px 20px var(--primaria);
 }
 
-/* Esferas decorativas */
+
 .sphere {
     position: fixed;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     z-index: 0;
-    /* atrás do conteúdo */
     filter: blur(60px);
     pointer-events: none;
-    /* não interfere com clique */
+    
 }
 
-/* Esferas decorativas */
 .sphere {
     position: fixed;
     width: 180px;
@@ -472,7 +470,6 @@ h2 {
     pointer-events: none;
 }
 
-/* Esfera no canto superior esquerdo (mais para o centro) */
 .sphere-top-left {
     top: 40px;
     left: 40px;
@@ -480,7 +477,7 @@ h2 {
     opacity: 0.8;
 }
 
-/* Esfera no canto inferior direito (mais para o centro) */
+
 .sphere-bottom-right {
     bottom: 40px;
     right: 40px;
@@ -532,9 +529,6 @@ h2 {
     }
 }
 
-/* ============================= */
-/* MELHORIA DAS CAIXAS DE TEXTO */
-/* ============================= */
 
 .sobre-caixa,
 .vida-box,
@@ -551,7 +545,7 @@ h2 {
     overflow: hidden;
 }
 
-/* Efeito neon ao passar o mouse */
+
 .sobre-caixa:hover,
 .vida-box:hover,
 .caixa:hover,
@@ -561,7 +555,7 @@ h2 {
     box-shadow: 0 0 25px var(--primaria), inset 0 0 15px rgba(0, 247, 255, 0.2);
 }
 
-/* Linha animada no topo da caixa */
+
 .sobre-caixa::before,
 .vida-box::before,
 .caixa::before,
@@ -591,7 +585,7 @@ h2 {
     }
 }
 
-/* Texto dentro das caixas */
+
 .sobre-caixa p,
 .vida-box p,
 .caixa p,
