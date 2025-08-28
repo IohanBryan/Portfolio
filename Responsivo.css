@@ -1,184 +1,122 @@
-/* Exibir o ícone hamburger no mobile */
-.menu-icon {
-  display: block;
-}
+/* ====== RESPONSIVIDADE SOMENTE PARA CELULAR ====== */
 
-/* Esconder o menu padrão */
-.menu {
-  display: none;
-  flex-direction: column;
-  background-color: var(--escuro);
-  position: absolute;
-  top: 58px;
-  right: 0;
-  width: 100%;
-  padding: 1rem 0;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-  z-index: 200;
-}
-
-/* Mostrar o menu quando checkbox ativo */
-#menu-toggle:checked + .menu-icon + .menu {
-  display: flex;
-}
-
-.menu li {
-  margin: 0.8rem 0;
-  text-align: center;
-}
-
-/* Ajustar links do menu no mobile */
-.menu-link {
-  font-size: 1.3rem;
-}
-
-/* BODY padding menor para mobile */
-body {
-  padding: 1rem 1.2rem;
-}
-
-/* HEADER */
-.cabecalho {
-  margin: 2rem 0 3rem;
-}
-
-.foto-perfil {
-  width: 130px;
-  height: 130px;
-  border-width: 3px;
-  margin-bottom: 0.6rem;
-}
-
-.cabecalho h1 {
-  font-size: 2rem;
-}
-
-.cabecalho-sub-titulo {
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-}
-
-/* Sections max-width menor */
-section, .ppe, .Curriculo, .anexos {
-  max-width: 100%;
-  padding: 1rem 1rem;
-  margin-bottom: 3rem;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-/* Títulos menores */
-h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.8rem;
-  border-bottom: 2px solid var(primaria);
-  padding-bottom: 0.3rem;
-}
-
-.caixa h3 {
-  font-size: 1.2rem;
-}
-
-/* Textos dentro das caixas */
-.sobre-caixa p,
-.vida-box p,
-.caixa p,
-.Considerações-box p,
-.Referências-box p {
-  font-size: 1rem;
-}
-
-/* Anexos: empilha verticalmente e centraliza */
-.anexos {
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-/* Cartões anexos ocupam quase toda largura */
-.anexos-card {
-  max-width: 90%;
-  padding: 1rem 1rem;
-  box-shadow: none;
-  border-radius: 10px;
-}
-
-/* Imagens responsivas */
-.ppe-img,
-.Curriculo-img {
-  width: 100%;
-  height: auto;
-  box-shadow: none;
-  border-radius: 6px;
-}
-
-/* Footer */
-.footer {
-  padding: 1rem 1rem;
-}
-
-.footer-content p {
-  font-size: 0.9rem;
-}
-
-.social-icons {
-  gap: 1rem;
-}
-
-/* Esferas decorativas escondidas no mobile para não atrapalhar */
-.sphere {
+/* Hambúrguer oculto por padrão */
+.hamburguer {
   display: none;
 }
-/* Alinhar título e textos da Identificação Pessoal */
-#Identificação {
-  padding: 20px;
-}
 
-.sobre-titulo {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  text-align: left; /* deixa o título alinhado à esquerda */
-}
-
-.sobre-caixa {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* espaçamento entre os parágrafos */
-  max-width: 600px;
-  margin: 0 auto; /* centraliza o conteúdo da identificação */
-  text-align: left;
-  font-size: 1.1rem;
-}
-
-.projeto-vida {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-.projeto-vida .caixa {
-  background-color: var(--escuro); /* cor de fundo leve */
-  padding: 15px;
-  margin-bottom: 15px; /* espaçamento entre as caixas */
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 100%; /* ocupa toda a largura disponível */
-  box-sizing: border-box;
-}
-
+/* Telas até 768px (celulares e tablets pequenos) */
 @media (max-width: 768px) {
-  .projeto-vida {
-    max-width: 90%;
-    padding: 0 10px;
+  .navegacao {
+    display: flex;
+    justify-content: space-between; /* Logo esquerda / hambúrguer direita */
+    align-items: center;
+    padding: 1rem 1.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  /* Botão hamburguer só aparece no mobile */
+  .hamburguer {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    z-index: 1100;
+  }
+  .hamburguer span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--primaria);
+    left: 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .hamburguer span:nth-child(1) { top: 0; }
+  .hamburguer span:nth-child(2) { top: 9px; }
+  .hamburguer span:nth-child(3) { top: 18px; }
+  .hamburguer.ativo span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+  .hamburguer.ativo span:nth-child(2) { opacity: 0; }
+  .hamburguer.ativo span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+  /* Menu recolhido no celular */
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.97);
+    border-top: 1px solid var(--primaria);
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  .menu.ativo {
+    height: 100vh;
+    padding: 2rem 0;
+  }
+
+  .menu-link {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Ajuste imagens no mobile */
+  .foto-perfil {
+    width: 180px;
+    height: 180px;
+  }
+  .identificacao-img,
+  .Curriculo-img,
+  .ppe-img {
+    max-width: 95%;
+    border-radius: 12px;
+  }
+
+  .sobre-caixa,
+  .projeto-vida,
+  .Curriculo,
+  .ppe {
+    flex-direction: column;
+    width: 95%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  .caixa {
+    width: 100%;
   }
 }
 
-/* Responsividade geral */
-@media (max-width: 768px) {
-  .sobre-caixa,
-  .projeto-vida {
-    max-width: 90%;
-    padding: 15px;
+/* Telas até 480px (celulares menores) */
+@media (max-width: 480px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; }
+  .cabecalho-sub-titulo { font-size: 1rem; }
+  .sobre-titulo { font-size: 1.5rem; }
+  .caixa h3 { font-size: 1.2rem; }
+  .caixa p { font-size: 0.95rem; }
+
+  .anexos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .anexos-card {
+    width: 95%;
   }
 }
