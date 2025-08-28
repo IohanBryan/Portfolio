@@ -1,15 +1,12 @@
-/* ====== RESPONSIVIDADE SOMENTE PARA CELULAR ====== */
 
-/* Hambúrguer oculto por padrão */
 .hamburguer {
   display: none;
 }
 
-/* Telas até 768px (celulares e tablets pequenos) */
 @media (max-width: 768px) {
   .navegacao {
     display: flex;
-    justify-content: space-between; /* Logo esquerda / hambúrguer direita */
+    justify-content: space-between; 
     align-items: center;
     padding: 1rem 1.2rem;
     position: fixed;
@@ -23,7 +20,6 @@
     font-size: 1rem;
   }
 
-  /* Botão hamburguer só aparece no mobile */
   .hamburguer {
     display: block;
     cursor: pointer;
@@ -48,7 +44,7 @@
   .hamburguer.ativo span:nth-child(2) { opacity: 0; }
   .hamburguer.ativo span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
 
-  /* Menu recolhido no celular */
+  
   .menu {
     position: absolute;
     top: 100%;
@@ -76,7 +72,7 @@
     text-align: center;
   }
 
-  /* Ajuste imagens no mobile */
+ 
   .foto-perfil {
     width: 180px;
     height: 180px;
@@ -103,7 +99,7 @@
   }
 }
 
-/* Telas até 480px (celulares menores) */
+
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.2rem; }
