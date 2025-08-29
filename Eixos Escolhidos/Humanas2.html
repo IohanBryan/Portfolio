@@ -112,8 +112,6 @@
       background-color: #0f0f1e;
       transition: background-color 0.3s ease;
     }
-
-    /* Removido o efeito de hover */
     .slide-image:hover {
       cursor: pointer;
     }
@@ -158,8 +156,6 @@
       line-height: 1.6;
       max-width: 500px;
     }
-
-    /* Posicionamento das setas abaixo do texto */
     .right-arrows {
       display: flex;
       gap: 20px;
@@ -265,8 +261,6 @@
         slide.classList.toggle('active', i === index);
       });
     }
-
-    // Para que todas as setas funcionem (uma por slide)
     document.querySelectorAll('#prev').forEach(btn => {
       btn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;

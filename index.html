@@ -149,9 +149,14 @@
     </section>
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; <span id="year"></span> Iohan Bryan. Todos os direitos reservados.</p>
+            <p>
+                &copy; <span id="year"></span> Iohan Bryan.
+                <a href="#" id="abrir-direitos" style="color: var(--primaria); text-decoration: none;">
+                    Direitos Autorais
+                </a>
+            </p>
             <div class="social-icons">
-
+                <!-- seus ícones já existentes -->
 
                 <a href="https://www.instagram.com/iohanbryan_2/?next=%2F" target="_blank" class="social-icon"
                     title="Instagram">
@@ -171,7 +176,48 @@
                 </a>
             </div>
         </div>
+        </div>
     </footer>
+
+    <div id="modal-direitos" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Direitos Autorais</h2>
+            <p>
+                Todo o conteúdo deste portfólio virtual, incluindo textos, imagens, design e códigos,
+                é de autoria de <strong>Iohan Bryan</strong> e está protegido pelas leis de direitos
+                autorais vigentes no Brasil e internacionalmente. <br><br>
+                É proibida a cópia, reprodução, distribuição ou utilização parcial ou integral do
+                material sem autorização prévia e por escrito do autor. <br><br>
+                Para solicitações de uso ou parcerias, entre em contato através do e-mail:
+                <strong>yohanbryan2000@gmail.com</strong>.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const modal = document.getElementById("modal-direitos");
+        const abrir = document.getElementById("abrir-direitos");
+        const fechar = document.querySelector(".fechar");
+
+        abrir.onclick = function (e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+        }
+
+        fechar.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
 
 </body>
 
