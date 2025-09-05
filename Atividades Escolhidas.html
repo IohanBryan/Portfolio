@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="img/logo-iobr.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -264,15 +265,19 @@
             0% {
                 transform: translate(0, 0);
             }
+
             25% {
                 transform: translate(10%, -10%);
             }
+
             50% {
                 transform: translate(0, 10%);
             }
+
             75% {
                 transform: translate(-10%, -10%);
             }
+
             100% {
                 transform: translate(0, 0);
             }
@@ -307,7 +312,9 @@
             </button>
 
             <div class="slider-container" id="slider-container">
-                <div class="card" data-bg-image="img/linguagens_fundo.jpg" data-title="LINGUAGENS" data-subtitle="Estudo da comunicação e das diferentes formas de expressão humana." data-link="Eixos Escolhidos/Linguagens2.html">
+                <div class="card" data-bg-image="img/linguagens_fundo.jpg" data-title="LINGUAGENS"
+                    data-subtitle="Estudo da comunicação e das diferentes formas de expressão humana."
+                    data-link="Eixos Escolhidos/Linguagens2.html">
                     <img src="img/Linguagens.jpeg" alt="Linguagens">
                     <div class="card-content">
                         <h3>Linguagens</h3>
@@ -315,7 +322,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-bg-image="img/humanas_fundo.jpg" data-title="HUMANAS" data-subtitle="Análise da sociedade, cultura, história e comportamento humano." data-link="Eixos Escolhidos/Humanas2.html">
+                <div class="card" data-bg-image="img/humanas_fundo.jpg" data-title="HUMANAS"
+                    data-subtitle="Análise da sociedade, cultura, história e comportamento humano."
+                    data-link="Eixos Escolhidos/Humanas2.html">
                     <img src="img/Humanas.jpg" alt="Humanas">
                     <div class="card-content">
                         <h3>Humanas</h3>
@@ -323,7 +332,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-bg-image="img/natureza_fundo.jpg" data-title="NATUREZA" data-subtitle="Estudo das ciências biológicas, químicas e físicas." data-link="Eixos Escolhidos/Natureza2.html">
+                <div class="card" data-bg-image="img/natureza_fundo.jpg" data-title="NATUREZA"
+                    data-subtitle="Estudo das ciências biológicas, químicas e físicas."
+                    data-link="Eixos Escolhidos/Natureza2.html">
                     <img src="img/Natureza.jpg" alt="Natureza">
                     <div class="card-content">
                         <h3>Natureza</h3>
@@ -331,7 +342,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-bg-image="img/matematica_fundo.jpg" data-title="MATEMÁTICA" data-subtitle="O mundo dos números, lógica, e do raciocínio." data-link="Eixos Escolhidos/Matematica2.html">
+                <div class="card" data-bg-image="img/matematica_fundo.jpg" data-title="MATEMÁTICA"
+                    data-subtitle="O mundo dos números, lógica, e do raciocínio."
+                    data-link="Eixos Escolhidos/Matematica2.html">
                     <img src="img/Matemática.jpg" alt="Matemática">
                     <div class="card-content">
                         <h3>Matemática</h3>
@@ -339,7 +352,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-bg-image="img/senai_fundo.jpg" data-title="SENAI" data-subtitle="Cursos técnicos e profissionalizantes para o mercado de trabalho." data-link="Eixos Escolhidos/Senai2.html">
+                <div class="card" data-bg-image="img/senai_fundo.jpg" data-title="SENAI"
+                    data-subtitle="Cursos técnicos e profissionalizantes para o mercado de trabalho."
+                    data-link="Eixos Escolhidos/Senai2.html">
                     <img src="img/Senai.jpeg" alt="Senai">
                     <div class="card-content">
                         <h3>Senai</h3>
@@ -373,7 +388,7 @@
             const newTitle = card.dataset.title;
             const newSubtitle = card.dataset.subtitle;
             const newLink = card.dataset.link;
-            
+
             bgImage.style.backgroundImage = `url('${newBg}')`;
             heroTitle.textContent = newTitle;
             heroSubtitle.textContent = newSubtitle;

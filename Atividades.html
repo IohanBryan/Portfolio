@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="img/logo-iobr.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -51,7 +52,7 @@
             transition: background-image 0.8s ease-in-out;
             filter: brightness(0.7);
         }
-        
+
         .overlay {
             position: absolute;
             top: 0;
@@ -82,14 +83,14 @@
             color: var(--primaria);
             text-shadow: 0 0 10px var(--secundaria);
         }
-        
+
         .menu-link {
             text-decoration: none;
             color: var(--claro);
             font-weight: 500;
             position: relative;
         }
-        
+
         .menu-link::after {
             content: '';
             height: 2px;
@@ -100,7 +101,7 @@
             background: var(--primaria);
             transition: width 0.5s ease;
         }
-        
+
         .menu-link:hover::after {
             width: 100%;
         }
@@ -159,7 +160,7 @@
             gap: 15px;
             z-index: 101;
         }
-        
+
         .slider-nav-btn {
             background-color: rgba(255, 255, 255, 0.2);
             border: none;
@@ -173,11 +174,11 @@
             transition: background-color 0.3s ease;
             z-index: 102;
         }
-        
+
         .slider-nav-btn:hover {
             background-color: rgba(255, 255, 255, 0.4);
         }
-        
+
         .slider-nav-btn span {
             color: var(--claro);
             font-size: 1.5rem;
@@ -253,7 +254,7 @@
             top: -20%;
             left: -20%;
         }
-        
+
         .gradient-blur-2 {
             background: linear-gradient(to left, #00f7ff, #ff00ff);
             bottom: -20%;
@@ -264,15 +265,19 @@
             0% {
                 transform: translate(0, 0);
             }
+
             25% {
                 transform: translate(10%, -10%);
             }
+
             50% {
                 transform: translate(0, 10%);
             }
+
             75% {
                 transform: translate(-10%, -10%);
             }
+
             100% {
                 transform: translate(0, 0);
             }
@@ -307,15 +312,19 @@
             </button>
 
             <div class="slider-container" id="slider-container">
-                <div class="card" data-bg-image="img/linguagens_fundo.jpg" data-title="LINGUAGENS" data-subtitle="Estudo da comunicação e das diferentes formas de expressão humana." data-link="Eixos/Linguagens.html">
+                <div class="card" data-bg-image="img/linguagens_fundo.jpg" data-title="LINGUAGENS"
+                    data-subtitle="Estudo da comunicação e das diferentes formas de expressão humana."
+                    data-link="Eixos/Linguagens.html">
                     <img src="img/Linguagens.jpeg" alt="Linguagens">
                     <div class="card-content">
                         <h3>Linguagens</h3>
                         <p>Aprenda mais</p>
                     </div>
                 </div>
-                
-                <div class="card" data-bg-image="img/humanas_fundo.jpg" data-title="HUMANAS" data-subtitle="Análise da sociedade, cultura, história e comportamento humano." data-link="Eixos/Humanas.html">
+
+                <div class="card" data-bg-image="img/humanas_fundo.jpg" data-title="HUMANAS"
+                    data-subtitle="Análise da sociedade, cultura, história e comportamento humano."
+                    data-link="Eixos/Humanas.html">
                     <img src="img/Humanas.jpg" alt="Humanas">
                     <div class="card-content">
                         <h3>Humanas</h3>
@@ -323,15 +332,17 @@
                     </div>
                 </div>
 
-                <div class="card" data-bg-image="img/natureza_fundo.jpg" data-title="NATUREZA" data-subtitle="Estudo das ciências biológicas, químicas e físicas." data-link="Eixos/Natureza.html">
+                <div class="card" data-bg-image="img/natureza_fundo.jpg" data-title="NATUREZA"
+                    data-subtitle="Estudo das ciências biológicas, químicas e físicas." data-link="Eixos/Natureza.html">
                     <img src="img/Natureza.jpg" alt="Natureza">
                     <div class="card-content">
                         <h3>Natureza</h3>
                         <p>Explore a ciência</p>
                     </div>
                 </div>
-                
-                <div class="card" data-bg-image="img/matematica_fundo.jpg" data-title="MATEMÁTICA" data-subtitle="O mundo dos números, lógica, e do raciocínio." data-link="Eixos/Matematica.html">
+
+                <div class="card" data-bg-image="img/matematica_fundo.jpg" data-title="MATEMÁTICA"
+                    data-subtitle="O mundo dos números, lógica, e do raciocínio." data-link="Eixos/Matematica.html">
                     <img src="img/Matemática.jpg" alt="Matemática">
                     <div class="card-content">
                         <h3>Matemática</h3>
@@ -339,7 +350,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-bg-image="img/senai_fundo.jpg" data-title="SENAI" data-subtitle="Cursos técnicos e profissionalizantes para o mercado de trabalho." data-link="Eixos/Senai.html">
+                <div class="card" data-bg-image="img/senai_fundo.jpg" data-title="SENAI"
+                    data-subtitle="Cursos técnicos e profissionalizantes para o mercado de trabalho."
+                    data-link="Eixos/Senai.html">
                     <img src="img/Senai.jpeg" alt="Senai">
                     <div class="card-content">
                         <h3>Senai</h3>
@@ -373,7 +386,7 @@
             const newTitle = card.dataset.title;
             const newSubtitle = card.dataset.subtitle;
             const newLink = card.dataset.link;
-            
+
             bgImage.style.backgroundImage = `url('${newBg}')`;
             heroTitle.textContent = newTitle;
             heroSubtitle.textContent = newSubtitle;
