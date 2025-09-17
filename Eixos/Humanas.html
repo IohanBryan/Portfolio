@@ -356,6 +356,23 @@
         </div>
       </div>
 
+      <!-- Slide 10 (Eixo3)-->
+
+      <div class="slide">
+        <div class="image-container">
+          <img src="img/Cop 30 Para .png" alt="Constituição" class="slide-image" />
+        </div>
+        <div class="content-container">
+          <p class="tag">Eixo 3</p>
+          <h1 class="title">Humanas</h1>
+          <p class="description">Professora: Ileana - Data: 09/09/2025</p>
+
+          <div class="right-arrows">
+            <button class="arrow-btn" id="prev" aria-label="Anterior">&#9664;</button>
+            <button class="arrow-btn" id="next" aria-label="Próximo">&#9654;</button>
+          </div>
+        </div>
+      </div>
 
     </div>
   </main>
@@ -370,7 +387,6 @@
       });
     }
 
-    // Para que todas as setas funcionem (uma por slide)
     document.querySelectorAll('#prev').forEach(btn => {
       btn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
