@@ -1,0 +1,118 @@
+
+.hamburguer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navegacao {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem 1.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .hamburguer {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: relative;
+    z-index: 1100;
+  }
+  .hamburguer span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--primaria);
+    left: 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .hamburguer span:nth-child(1) { top: 0; }
+  .hamburguer span:nth-child(2) { top: 9px; }
+  .hamburguer span:nth-child(3) { top: 18px; }
+  .hamburguer.ativo span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+  .hamburguer.ativo span:nth-child(2) { opacity: 0; }
+  .hamburguer.ativo span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+  
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.97);
+    border-top: 1px solid var(--primaria);
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  .menu.ativo {
+    height: 100vh;
+    padding: 2rem 0;
+  }
+
+  .menu-link {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+ 
+  .foto-perfil {
+    width: 180px;
+    height: 180px;
+  }
+  .identificacao-img,
+  .Curriculo-img,
+  .ppe-img {
+    max-width: 95%;
+    border-radius: 12px;
+  }
+
+  .sobre-caixa,
+  .projeto-vida,
+  .Curriculo,
+  .ppe {
+    flex-direction: column;
+    width: 95%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+
+  .caixa {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; }
+  .cabecalho-sub-titulo { font-size: 1rem; }
+  .sobre-titulo { font-size: 1.5rem; }
+  .caixa h3 { font-size: 1.2rem; }
+  .caixa p { font-size: 0.95rem; }
+
+  .anexos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .anexos-card {
+    width: 95%;
+  }
+}
