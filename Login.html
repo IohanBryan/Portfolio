@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -138,18 +138,21 @@
 
     <div class="sphere sphere-top-left"></div>
     <div class="sphere sphere-bottom-right"></div>
+
     <script>
         function logar() {
             var login = document.getElementById("login").value;
             var senha = document.getElementById("senha").value;
-            if (login == "admin" && senha == "admin") {
-                alert("Sucesso");
+
+            if (login === "admin" && senha === "admin") {
+                alert("Login bem-sucedido!");
+                localStorage.setItem("logado", "true");
                 location.href = "index.html";
             } else {
-                alert("usuario ou senha invalida");
+                alert("Usuário ou senha inválidos!");
             }
         }
-
-
     </script>
 </body>
+
+</html>
