@@ -24,6 +24,45 @@ body {
     color: var(--claro);
 }
 
+.sphere {
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(60px);
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.sphere-top-left {
+    top: 40px;
+    left: 40px;
+    background: var(--primaria);
+    opacity: 0.8;
+    animation-delay: 0s;
+}
+
+.sphere-bottom-right {
+    bottom: 40px;
+    right: 40px;
+    background: var(--secundaria);
+    opacity: 0.9;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 .navegacao {
     position: fixed;
     top: 0;
