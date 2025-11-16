@@ -139,19 +139,20 @@
     <div class="sphere sphere-bottom-right"></div>
 
     <script>
-        function logar() {
-            var login = document.getElementById("login").value;
-            var senha = document.getElementById("senha").value;
+    function logar() {
+        var login = document.getElementById("login").value;
+        var senha = document.getElementById("senha").value;
 
-            if (login === "admin" && senha === "admin") {
-                alert("Login bem-sucedido!");
-                localStorage.setItem("logado", "true");
-                location.href = "index.html";
-            } else {
-                alert("Usuário ou senha inválidos!");
-            }
+        if (login === "admin" && senha === "admin") {
+            alert("Login bem-sucedido!");
+            localStorage.setItem("logado", "true");
+            location.href = "portfolio.html"; 
+            
+        } else {
+            alert("Usuário ou senha inválidos!");
         }
-    </script>
+    }
+</script>
 </body>
 
 </html>
