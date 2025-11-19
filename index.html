@@ -13,15 +13,16 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: 0.35s ease;
         }
 
         :root {
             --primaria: #00f7ff;
             --primaria-brilho: #00f7ff80;
-            --secundaria: rgba(0, 247, 255, 0.3);
+            --secundaria: rgba(0, 247, 255, 0.25);
             --escuro: #0f172a;
-            --maisEscuro: #0f0f1e;
-            --vidro: rgba(255, 255, 255, 0.05);
+            --maisEscuro: #0d0f1a;
+            --vidro: rgba(255, 255, 255, 0.06);
             --textoClaro: #e2e8f0;
         }
 
@@ -36,64 +37,71 @@
 
         form {
             background: var(--vidro);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px var(--primaria-brilho);
+            padding: 45px 38px;
+            border-radius: 18px;
             width: 320px;
             text-align: center;
-            z-index: 1;
             position: relative;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 18px var(--primaria-brilho);
         }
 
         h3 {
             color: var(--primaria);
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: 600;
+            text-shadow: 0 0 12px var(--primaria-brilho);
         }
 
         input[type="text"],
         input[type="password"] {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
+            padding: 13px;
+            margin: 12px 0;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             background-color: var(--escuro);
             color: var(--textoClaro);
             outline: none;
-            box-shadow: 0 0 10px var(--primaria-brilho);
-            transition: 0.3s;
+            box-shadow: 0 0 8px var(--primaria-brilho);
+            transition: 0.35s ease;
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            box-shadow: 0 0 15px var(--primaria);
+            box-shadow: 0 0 14px var(--primaria);
+            background-color: #111a33;
         }
 
         input[type="submit"] {
             width: 100%;
-            padding: 12px;
+            padding: 13px;
             background-color: var(--primaria);
             color: var(--maisEscuro);
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
+            font-size: 15px;
             font-weight: bold;
-            transition: 0.3s, transform 0.2s;
+            box-shadow: 0 0 12px var(--primaria-brilho);
+            transition: 0.35s ease;
         }
 
         input[type="submit"]:hover {
             background-color: #0ff;
+            box-shadow: 0 0 18px var(--primaria);
             transform: scale(1.05);
         }
 
         .sphere {
             position: fixed;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             z-index: 0;
-            filter: blur(60px);
+            filter: blur(70px);
+            opacity: 0.75;
             pointer-events: none;
             animation: float 6s ease-in-out infinite;
         }
@@ -102,27 +110,18 @@
             top: 40px;
             left: 40px;
             background: var(--primaria);
-            opacity: 0.8;
-            animation-delay: 0s;
         }
 
         .sphere-bottom-right {
             bottom: 40px;
             right: 40px;
             background: var(--secundaria);
-            opacity: 0.9;
-            animation-delay: 3s;
+            animation-delay: 2s;
         }
 
         @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-18px); }
         }
     </style>
 </head>
@@ -130,8 +129,10 @@
 <body>
     <form>
         <h3>LOGIN</h3>
+
         <input type="text" placeholder="Login" id="login" />
         <input type="password" placeholder="Senha" id="senha" />
+
         <input type="submit" value="Entrar" onclick="logar();return false" />
     </form>
 
@@ -139,20 +140,19 @@
     <div class="sphere sphere-bottom-right"></div>
 
     <script>
-    function logar() {
-        var login = document.getElementById("login").value;
-        var senha = document.getElementById("senha").value;
+        function logar() {
+            var login = document.getElementById("login").value;
+            var senha = document.getElementById("senha").value;
 
-        if (login === "admin" && senha === "admin") {
-            alert("Login bem-sucedido!");
-            localStorage.setItem("logado", "true");
-            location.href = "portfolio.html"; 
-            
-        } else {
-            alert("Usuário ou senha inválidos!");
+            if (login === "admin" && senha === "admin") {
+                alert("Login bem-sucedido!");
+                localStorage.setItem("logado", "true");
+                location.href = "portfolio.html"; 
+            } else {
+                alert("Usuário ou senha inválidos!");
+            }
         }
-    }
-</script>
+    </script>
 </body>
 
 </html>
