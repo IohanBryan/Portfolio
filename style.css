@@ -327,7 +327,7 @@ h2 {
     box-shadow: 0 0 15px rgba(0, 247, 255, 0.2), inset 0 0 10px rgba(0, 247, 255, 0.1);
     border-radius: 20px;
     padding: 2rem;
-    width: 40%;
+    width: 100%; 
     min-width: 280px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
