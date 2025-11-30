@@ -7,133 +7,134 @@
     <title>Login</title>
     <link rel="icon" href="img/logo-iobr.png" type="image/png">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: 0.35s ease;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
             --primaria: #00f7ff;
-            --primaria-brilho: #00f7ff80;
-            --secundaria: rgba(0, 247, 255, 0.25);
+            --primaria-brilho: #00f7ff55;
+            --secundaria: rgba(0, 247, 255, 0.18);
             --escuro: #0f172a;
-            --maisEscuro: #0d0f1a;
-            --vidro: rgba(255, 255, 255, 0.06);
+            --maisEscuro: #0b101d;
+            --vidro: rgba(255, 255, 255, 0.05);
             --textoClaro: #e2e8f0;
         }
 
         body {
-            background-color: var(--maisEscuro);
+            background: var(--maisEscuro);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             overflow: hidden;
+            color: var(--textoClaro);
         }
 
         form {
             background: var(--vidro);
-            padding: 45px 38px;
+            border: 2px solid var(--primaria);
+            padding: 40px;
             border-radius: 18px;
-            width: 320px;
-            text-align: center;
-            position: relative;
+            width: 90%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
             backdrop-filter: blur(12px);
-            box-shadow: 0 0 18px var(--primaria-brilho);
+            box-shadow: 0 0 20px var(--primaria-brilho);
         }
 
         h3 {
+            text-align: center;
             color: var(--primaria);
-            margin-bottom: 25px;
-            font-size: 26px;
-            font-weight: 600;
-            text-shadow: 0 0 12px var(--primaria-brilho);
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px var(--primaria-brilho);
         }
 
         input[type="text"],
         input[type="password"] {
-            width: 100%;
-            padding: 13px;
-            margin: 12px 0;
-            border: none;
+            padding: 14px;
             border-radius: 10px;
-            background-color: var(--escuro);
+            border: 1px solid var(--primaria);
+            background: rgba(0, 0, 0, 0.45);
             color: var(--textoClaro);
+            font-size: 1rem;
             outline: none;
-            box-shadow: 0 0 8px var(--primaria-brilho);
-            transition: 0.35s ease;
+            transition: border 0.25s ease, box-shadow 0.25s ease;
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            box-shadow: 0 0 14px var(--primaria);
-            background-color: #111a33;
+            border-color: var(--primaria);
+            box-shadow: 0 0 10px var(--primaria-brilho);
         }
 
         input[type="submit"] {
-            width: 100%;
-            padding: 13px;
-            background-color: var(--primaria);
-            color: var(--maisEscuro);
+            padding: 14px;
             border: none;
             border-radius: 10px;
-            cursor: pointer;
-            font-size: 15px;
+            background: var(--primaria);
+            color: var(--escuro);
+            font-size: 1.15rem;
             font-weight: bold;
-            box-shadow: 0 0 12px var(--primaria-brilho);
-            transition: 0.35s ease;
+            cursor: pointer;
+            transition: 0.25s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #0ff;
+            background: var(--textoClaro);
             box-shadow: 0 0 18px var(--primaria);
-            transform: scale(1.05);
+            transform: translateY(-2px);
         }
 
         .sphere {
             position: fixed;
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            z-index: 0;
             filter: blur(70px);
-            opacity: 0.75;
+            opacity: 0.7;
             pointer-events: none;
-            animation: float 6s ease-in-out infinite;
+            animation: flutuar 6s ease-in-out infinite;
         }
 
         .sphere-top-left {
-            top: 40px;
-            left: 40px;
+            top: 50px;
+            left: 50px;
             background: var(--primaria);
         }
 
         .sphere-bottom-right {
-            bottom: 40px;
-            right: 40px;
+            bottom: 50px;
+            right: 50px;
             background: var(--secundaria);
-            animation-delay: 2s;
+            animation-delay: 2.3s;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
+        @keyframes flutuar {
+            0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-18px); }
         }
     </style>
 </head>
 
 <body>
+
     <form>
         <h3>LOGIN</h3>
 
-        <input type="text" placeholder="Login" id="login" />
-        <input type="password" placeholder="Senha" id="senha" />
+        <input type="text" placeholder="Login" id="login">
+        <input type="password" placeholder="Senha" id="senha">
 
-        <input type="submit" value="Entrar" onclick="logar();return false" />
+        <input type="submit" value="Entrar" onclick="logar(); return false;">
     </form>
 
     <div class="sphere sphere-top-left"></div>
@@ -141,18 +142,19 @@
 
     <script>
         function logar() {
-            var login = document.getElementById("login").value;
-            var senha = document.getElementById("senha").value;
+            let login = document.getElementById("login").value;
+            let senha = document.getElementById("senha").value;
 
             if (login === "admin" && senha === "admin") {
                 alert("Login bem-sucedido!");
                 localStorage.setItem("logado", "true");
-                location.href = "portfolio.html"; 
+                location.href = "portfolio.html";
             } else {
                 alert("Usuário ou senha inválidos!");
             }
         }
     </script>
+
 </body>
 
 </html>
