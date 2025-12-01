@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Estudos | Iohan Bryan</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primaria: #00f7ff;
+            --secundaria: rgba(0, 247, 255, 0.5);
+            --escuro: #0f172a;
+            --maisEscuro: #0f0f1e;
+            --claro: #e2e8f0;
+            --vidro: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--escuro);
+            color: var(--claro);
+        }
+
+        .sphere {
+            position: fixed;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(60px);
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .sphere-top-left {
+            top: 40px;
+            left: 40px;
+            background: var(--primaria);
+            opacity: 0.8;
+            animation-delay: 0s;
+        }
+
+        .sphere-bottom-right {
+            bottom: 40px;
+            right: 40px;
+            background: var(--secundaria);
+            opacity: 0.9;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .navegacao {
+            position: fixed;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Orbitron", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primaria);
+            text-shadow: 0 0 10px var(--secundaria);
+            padding-left: 2rem;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem; 
+            justify-content: center;
+            padding-right: 2rem;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: var(--claro);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .menu-link::after {
+            content: '';
+            height: 2px;
+            width: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: var(--primaria);
+            transition: width 0.5s ease;
+        }
+
+        .menu-link:hover::after {
+            width: 100%;
+        }
+
+        .footer-novo {
+            background: var(--maisEscuro);
+            padding: 30px 40px;
+            border-top: 1px solid var(--vidro);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        
+        .secao-ppe {
+            min-height: 100vh;
+            padding: 10rem 2rem 4rem; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .secao-ppe h2 {
+            font-size: 2.8rem;
+            color: var(--primaria);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 0 0 10px var(--secundaria);
+        }
+
+        .ppe-tabela-container {
+            width: 100%;
+            max-width: 1000px; 
+            overflow-x: auto; 
+            background: linear-gradient(145deg, rgba(0, 247, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid var(--primaria);
+            box-shadow: 0 0 25px rgba(0, 247, 255, 0.3), inset 0 0 15px rgba(0, 247, 255, 0.2);
+            border-radius: 20px;
+            padding: 10px; 
+        }
+        
+        .ppe-tabela {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+            text-align: center;
+            min-width: 700px; 
+        }
+
+        .ppe-tabela th, .ppe-tabela td {
+            padding: 15px 10px;
+            border: 1px solid var(--secundaria);
+        }
+
+        .ppe-tabela th {
+            background-color: var(--primaria);
+            color: var(--escuro);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            border-color: var(--primaria);
+        }
+
+        .ppe-tabela tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.05); 
+        }
+
+        .ppe-tabela tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.1); 
+        }
+
+        .ppe-tabela td:first-child {
+            font-weight: 700;
+            color: var(--primaria);
+            text-shadow: 0 0 5px var(--secundaria);
+        }
+
+        .ppe-tabela .livre, .ppe-tabela .pessoal {
+            color: var(--primaria);
+            font-weight: 600;
+        }
+        
+        .ppe-tabela .sesi, .ppe-tabela .senai {
+            color: var(--claro);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .secao-ppe {
+                padding-top: 8rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .secao-ppe h2 {
+                font-size: 2rem;
+            }
+
+            .ppe-tabela-container {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sphere sphere-top-left"></div>
+    <div class="sphere sphere-bottom-right"></div>
+
+    <header class="navegacao">
+        <div class="logo">CURRÍCULO</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="menu-link">Home</a></li> 
+                <li><a href="curriculo.html" class="menu-link">Currículo</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="secao-ppe">
+            <h2><span class="material-icons">schedule</span> Plano Pessoal de Estudos (PPE)</h2>
+            
+            <div class="ppe-tabela-container">
+                <table class="ppe-tabela">
+                    <thead>
+                        <tr>
+                            <th>Manhã</th>
+                            <th>Segunda-feira</th>
+                            <th>Terça-feira</th>
+                            <th>Quarta-feira</th>
+                            <th>Quinta-feira</th>
+                            <th>Sexta-feira</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8:00 <br> 11:00</td>
+                            <td class="estudo">Humanas</td>
+                            <td class="estudo">Linguagens</td>
+                            <td class="estudo">Matemática</td>
+                            <td class="estudo">Ciências Da Natureza</td>
+                            <td class="pessoal">Estudo Pessoal</td>
+                        </tr>
+                        <tr>
+                            <td>13:00 <br> 18:20</td>
+                            <td class="sesi">Sesi</td>
+                            <td class="sesi">Sesi</td>
+                            <td class="senai">Senai</td>
+                            <td class="senai">Senai</td>
+                            <td class="senai">Senai</td>
+                        </tr>
+                        <tr>
+                            <td>18:20 <br> 22:00</td>
+                            <td class="livre">Livre</td>
+                            <td class="estudo">Contra turno</td>
+                            <td class="estudo">Contra turno</td>
+                            <td class="estudo">Contra turno</td>
+                            <td class="pessoal">Estudo Pessoal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer-novo">
+        &copy; 2025 Iohan Bryan | Desenvolvedor Web
+    </footer>
+</body>
+
+</html>
